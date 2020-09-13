@@ -388,14 +388,14 @@ const Variables = () => {
                 {`
   lang:eng #select appropriate language
 
-  int = 0
-  str = 'Hello, '
-  str += 'World!'
-  double = 0.10
+  i = 0
+  s = 'Hello, '
+  s += 'World!'
+  d = 0.10
   n = null
-  bool = true
-  lst = [10, [], 'yes']
-  map = $|'x':10, 'y':10, true:20| #hashmap
+  b = true
+  l = [10, [], 'yes']
+  m = $|'x':10, 'y':10, true:20| #hashmap
                 `}
               </code>
             </pre>
