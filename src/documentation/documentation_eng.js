@@ -4,17 +4,18 @@ const DocumentationBodyEng = ({ props }) => {
     <>
       <BodyTop />
       <Overview />
+      <SelectingLanguage />
       <Print />
       <Variables />
-      <Conditionals />
-      <Loops />
-      <Functions />
       <Types />
       <GeneralOperators />
+      <Conditionals />
       <BooleanOperators />
-      <KeyWords />
+      <Loops />
+      <CustomFunctions />
+      <PreBuiltFunctions />
       <Comments />
-      <SelectingLanguage />
+      <KeyWords />
     </>
   );
 };
@@ -42,8 +43,10 @@ const Overview = () => {
               and french! While it is quite similar to python in structure, it
               has many distinct differences. It is interpreted (by java), and
               dynamically typed. It is obviously a personal project, and yet it
-              supports many aspects necessary in general purpose languages!
-              Enjoy looking around at the english documentation below :)
+              supports many aspects necessary in general purpose languages! This
+              is pass by object (how inefficient I know), and whitespace is
+              generally ignored excluding most newlines. Enjoy looking around at
+              the english documentation below :)
             </p>
           </div>
         </div>
@@ -129,6 +132,10 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>put</td>
+                  <td>tmp</td>
+                </tr>
+                <tr>
+                  <td>sub</td>
                   <td>tmp</td>
                 </tr>
                 <tr>
@@ -374,6 +381,90 @@ const GeneralOperators = () => {
   );
 };
 
+const PreBuiltFunctions = () => {
+  return (
+    <>
+      <div className="container py-2">
+        <div className="row">
+          <div className="col align-self-center">
+            <h3 className="pb-3">Prebuilt Functions</h3>
+            <p className="pb-4">
+              List of prebuilt functions below. ITEM implies of any type. <br />
+              arg1 = argument 1, arg2 = argument 2...
+            </p>
+            <dl class="row">
+              <dt className="col-sm-3">len(LIST|MAP|STRING)</dt>
+              <dd className="col-sm-9">
+                <p>Returns the length of the object.</p>
+              </dd>
+              <dt className="col-sm-3">append(LIST, ITEM)</dt>
+              <dd className="col-sm-9">
+                <p>Arg2 added to end of List specified. New List returned.</p>
+              </dd>
+
+              <dt className="col-sm-3">addAt(LIST, ITEM, INT)</dt>
+              <dd className="col-sm-9">
+                <p>Adds arg2 to List at index specified by arg3</p>
+              </dd>
+
+              <dt className="col-sm-3">get(LIST|STRING, INT)</dt>
+              <dd className="col-sm-9">
+                <p>Returns value of at arg2 from arg1.</p>
+              </dd>
+              <dt className="col-sm-3">get(MAP, ITEM)</dt>
+              <dd className="col-sm-9">
+                <p>
+                  Returns value attached to key from arg2 in the map at arg1.
+                </p>
+              </dd>
+              <dt className="col-sm-3">remove(LIST, INT)</dt>
+              <dd className="col-sm-9">
+                <p>Value from arg1 removed at arg2 value. Returns new List.</p>
+              </dd>
+              <dt className="col-sm-3">remove(MAP, ITEM)</dt>
+              <dd className="col-sm-9">
+                <p>
+                  Removes key value pair from Map in arg1, with arg2 being key.
+                  Returns new Map.
+                </p>
+              </dd>
+              <dt className="col-sm-3">set(LIST, ITEM, INT)</dt>
+              <dd className="col-sm-9">
+                <p>
+                  Sets value of List from arg1 at location in specified by arg3
+                  to value specified in arg2, then returns new List.
+                </p>
+              </dd>
+              <dt className="col-sm-3">put(MAP, ITEM, ITEM)</dt>
+              <dd className="col-sm-9">
+                <p>
+                  Adds key and value pair to map in first argument, arg2 is key
+                  and arg3 is value. If key already present overwrites value.
+                  Then returns new Map.
+                </p>
+              </dd>
+              <dt className="col-sm-3">sub(LIST|STRING, INT, INT)</dt>
+              <dd className="col-sm-9">
+                <p>
+                  Returns sublist or substring from argument one, with range of
+                  inclusive at arg2 and exclusive of arg3. From arg2 to arg3.
+                </p>
+              </dd>
+              <dt className="col-sm-3">getKeys(MAP)</dt>
+              <dd className="col-sm-9">
+                <p>Returns array of keys from specified Map.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col align-self-center border-bottom"></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const Variables = () => {
   return (
     <>
@@ -382,7 +473,7 @@ const Variables = () => {
           <div className="col align-self-center">
             <h3 className="pb-3">Variables</h3>
             <p>
-              Variables do not need to have a type when initialized. Have
+              Variables do not need to have a type when initialized. They have
               function scope, and NO variable hoisting. Regex for valid custom
               variable names is: [A-Za-z]+[A-Za-z0-9]*
               <br />
@@ -417,7 +508,7 @@ const Variables = () => {
   );
 };
 
-const Functions = () => {
+const CustomFunctions = () => {
   return (
     <>
       <div className="container py-2">
