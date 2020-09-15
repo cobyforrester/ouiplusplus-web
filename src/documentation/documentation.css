@@ -2,10 +2,3 @@
 .borderless th {
   border: none !important;
 }
-
-/*
-.table-hover th:hover,
-.table-hover td:hover {
-  background-color: grey;
-}
-*/

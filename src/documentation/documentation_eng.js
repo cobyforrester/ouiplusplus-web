@@ -1,13 +1,15 @@
 import React from "react";
-const DocumentationBody = ({ props }) => {
+const DocumentationBodyEng = ({ props }) => {
   return (
     <>
       <BodyTop />
       <Overview />
+      <Print />
       <Variables />
-      <Functions />
       <Conditionals />
-      <PrimitiveTypes />
+      <Loops />
+      <Functions />
+      <Types />
       <GeneralOperators />
       <BooleanOperators />
       <KeyWords />
@@ -41,7 +43,7 @@ const Overview = () => {
               has many distinct differences. It is interpreted (by java), and
               dynamically typed. It is obviously a personal project, and yet it
               supports many aspects necessary in general purpose languages!
-              Enjoy looking around :)
+              Enjoy looking around at the english documentation below :)
             </p>
           </div>
         </div>
@@ -145,13 +147,13 @@ const KeyWords = () => {
   );
 };
 
-const PrimitiveTypes = () => {
+const Types = () => {
   return (
     <>
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Primitive Types</h3>
+            <h3 className="pb-3">Types</h3>
             <dl class="row">
               <dt className="col-sm-2">Int</dt>
               <dd className="col-sm-10">
@@ -175,13 +177,17 @@ const PrimitiveTypes = () => {
               </dd>
               <dt className="col-sm-2">List</dt>
               <dd className="col-sm-10">
-                <p>Mutable. Ex: ['hello', true, null, [10]]</p>
+                <p>
+                  Mutable. Takes any type as value. Ex:{" "}
+                  <code>['hello', true, (100 - 2 ^ 10), [10]]</code>
+                </p>
               </dd>
               <dt className="col-sm-2">Map</dt>
               <dd className="col-sm-10">
                 <p>
-                  Mutable. Insert order maintained. No duplicates. Ex: $|'x':10,
-                  'y':10, true:20|
+                  Mutable. Insert order maintained. No duplicates. Takes any
+                  type as key or value. Ex:{" "}
+                  <code>$|'x':10, 'y':10, true:20|</code>
                 </p>
               </dd>
               <dt className="col-sm-2">Null</dt>
@@ -380,7 +386,9 @@ const Variables = () => {
               function scope, and NO variable hoisting. Regex for valid custom
               variable names is: [A-Za-z]+[A-Za-z0-9]*
               <br />
-              Some example variable declarations are below. Semicolons optional.
+              Semicolons optional.
+              <br />
+              Some example variable declarations are below.
             </p>
 
             <pre className="prettyprint">
@@ -388,14 +396,14 @@ const Variables = () => {
                 {`
   lang:eng #select appropriate language
 
-  i = --10 + -(+10 * 11) / 7 % 2
+  i = --10 + -(+10 * 11) / 7 % 2 #int
   s = 'Hello, '
-  s += 'World!'
-  d = 0.10;
-  n = null
-  b = true;
-  l = [10, [], 'yes']
-  m = $|'x':10, 'y':10, true:20| #hashmap
+  s += 'World!' #string
+  d = 0.10; #double
+  n = null #null
+  b = true; #boolean
+  l = [10, [], 'yes'] #list
+  m = $|'x':10, 'y':10, true:20| #map
                 `}
               </code>
             </pre>
@@ -415,7 +423,7 @@ const Functions = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Functions</h3>
+            <h3 className="pb-3">Custom Functions</h3>
             <p>
               Functions need to start with fonc or func. No return statement
               required, and return statement can be empty. Supports recursion.
@@ -430,14 +438,16 @@ const Functions = () => {
                 {`
   lang:eng #select appropriate language
 
+  # two random functions
   func printTruth(str) {
     print(str)
   }
-  printTruth('Oui++ is so great!')
-
   func addTwo(a, b) {
     return a + b
   }
+
+  # printins result, one with function one with print()
+  printTruth('Oui++ is so great!')
   print(addTwo(10, 12))
                 `}
               </code>
@@ -525,6 +535,87 @@ const Comments = () => {
   );
 };
 
+const Loops = () => {
+  return (
+    <>
+      <div className="container py-2">
+        <div className="row">
+          <div className="col align-self-center">
+            <h3 className="pb-3">Loops</h3>
+            <p>
+              Both for and while loops are available. For loops take in 3
+              inputs, a variable name, and a starting and ending Integer value.
+              If the starting is greater than the ending it counts in reverse.
+              While loops take in one conditional statement.
+            </p>
+
+            <pre className="prettyprint">
+              <code>
+                {`
+  lang:eng #select appropriate language
+
+  arr = [1, 2, 3, 4, 5]
+
+  # while loop through arr
+  print('WHILE LOOP:')
+  i = 0
+  while(i < len(arr)) {
+    print(get(arr, i))
+    i+=1
+  }
+  
+  # same but in for loop format, changing array slightly
+  print('\\nFOR LOOP:')
+  arr += ['oui++'] * 5 # some nifty list features
+
+  for i -> (0, len(arr)) {
+    print(get(arr, i))
+  }
+                `}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col align-self-center border-bottom"></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Print = () => {
+  return (
+    <>
+      <div className="container py-2">
+        <div className="row">
+          <div className="col align-self-center">
+            <h3 className="pb-3">Print</h3>
+            <p>
+              To output a value use print(), and put the value in the ().
+              Newline added after every usage.
+            </p>
+
+            <pre className="prettyprint">
+              <code>
+                {`
+  lang:eng #select appropriate language
+
+  print(10 + 100)
+  print('Oui++ is the best, why did I print 110 before?')
+                `}
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col align-self-center border-bottom"></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const SelectingLanguage = () => {
   return (
     <>
@@ -555,4 +646,4 @@ const SelectingLanguage = () => {
   );
 };
 
-export { DocumentationBody };
+export { DocumentationBodyEng as DocumentationBody };
