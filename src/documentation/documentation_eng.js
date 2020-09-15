@@ -43,7 +43,7 @@ const Overview = () => {
               and French! While it is quite similar to python in structure, it
               has many distinct differences. It is interpreted (by java),
               dynamically typed, pass by object (I know, how inefficient right),
-              and whitespace is generally ignored excluding whitespace. It is
+              and whitespace is generally ignored excluding most newlines. It is
               obviously a personal project, and yet it supports many aspects
               necessary in general purpose languages! Enjoy looking around at
               the english documentation below :)
