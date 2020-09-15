@@ -1,4 +1,2 @@
-/*
-import { DocumentationBody } from "./documentation_eng";
-export { DocumentationBody };
-*/
+import { Interpreter } from "./interpreter";
+export { Interpreter };
