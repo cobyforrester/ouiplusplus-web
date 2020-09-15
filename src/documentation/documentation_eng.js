@@ -161,7 +161,7 @@ const Types = () => {
         <div className="row">
           <div className="col align-self-center">
             <h3 className="pb-3">Types</h3>
-            <dl class="row">
+            <dl className="row">
               <dt className="col-sm-2">Int</dt>
               <dd className="col-sm-10">
                 <p>8 bytes.</p>
@@ -223,7 +223,7 @@ const BooleanOperators = () => {
         <div className="row">
           <div className="col align-self-center">
             <h3 className="pb-3">Boolean Operators (Return boolean values)</h3>
-            <dl class="row">
+            <dl className="row">
               <dt className="col-sm-1">{"!"}</dt>
               <dd className="col-sm-11">
                 <p>Not operator. Converts booleans to their opposites.</p>
@@ -307,7 +307,7 @@ const GeneralOperators = () => {
         <div className="row">
           <div className="col align-self-center">
             <h3 className="pb-3">General Operators</h3>
-            <dl class="row">
+            <dl className="row">
               <dt className="col-sm-1">{"="}</dt>
               <dd className="col-sm-11">
                 <p>Assignment operator. Assigns value to variable.</p>
@@ -392,7 +392,7 @@ const PreBuiltFunctions = () => {
               List of prebuilt functions below. ITEM implies of any type. <br />
               arg1 = argument 1, arg2 = argument 2...
             </p>
-            <dl class="row">
+            <dl className="row">
               <dt className="col-sm-3">len(LIST|MAP|STRING)</dt>
               <dd className="col-sm-9">
                 <p>Returns the length of the object.</p>

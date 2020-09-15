@@ -1,21 +1,39 @@
-import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { dark, docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import React, { useState } from "react";
 
-export const Interpreter = ({ props }) => {
+import { UnControlled as CodeMirror } from "react-codemirror2";
+require("codemirror/mode/javascript/javascript");
+require("codemirror/mode/python/python");
+
+export const Interpreter = (props) => {
   return (
     <>
-      <InputBox />
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <InputBox />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
 const InputBox = () => {
+  let initialVal = "print(10-100)\nfor i -> (0, 100) {\n}";
+  const [val, setVal] = useState(initialVal);
   return (
     <>
-      <SyntaxHighlighter showLineNumbers language="javascript" style={docco}>
-        {"print(x) \nprint(10 + 100)"}
-      </SyntaxHighlighter>
+      <CodeMirror
+        value={val}
+        options={{
+          mode: "python",
+          theme: "oceanic-next",
+          lineNumbers: true,
+        }}
+        onChange={(editor, data, value) => {
+          setVal(value);
+        }}
+      />
     </>
   );
 };
