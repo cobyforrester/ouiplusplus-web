@@ -19,7 +19,7 @@ export const Interpreter = (props) => {
 };
 
 const InputBox = () => {
-  let initialVal = "print(10-100)\nfor i -> (0, 100) {\n}";
+  let initialVal = "lang:eng\nprint(10-100)\nfor i -> (0, 100) {\n}";
   const [val, setVal] = useState(initialVal);
   return (
     <>

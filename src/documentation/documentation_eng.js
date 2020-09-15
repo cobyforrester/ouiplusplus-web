@@ -39,13 +39,13 @@ const Overview = () => {
           <div className="col align-self-center">
             <h3>Overview</h3>
             <p>
-              Oui++ is an attempt at a language that is natively in both english
-              and french! While it is quite similar to python in structure, it
-              has many distinct differences. It is interpreted (by java), and
-              dynamically typed. It is obviously a personal project, and yet it
-              supports many aspects necessary in general purpose languages! This
-              is pass by object (how inefficient I know), and whitespace is
-              generally ignored excluding most newlines. Enjoy looking around at
+              Oui++ is an attempt at a language that is natively in both English
+              and French! While it is quite similar to python in structure, it
+              has many distinct differences. It is interpreted (by java),
+              dynamically typed, pass by object (I know, how inefficient right),
+              and whitespace is generally ignored excluding whitespace. It is
+              obviously a personal project, and yet it supports many aspects
+              necessary in general purpose languages! Enjoy looking around at
               the english documentation below :)
             </p>
           </div>
