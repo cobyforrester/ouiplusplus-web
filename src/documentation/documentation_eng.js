@@ -521,7 +521,7 @@ const CustomFunctions = () => {
               Does not support nested functions. Regex for valid custom function
               names is: [A-Za-z]+[A-Za-z0-9]*
               <br />
-              Some example variable declarations are below. Semicolons optional.
+              Some example function declarations are below.
             </p>
 
             <pre className="prettyprint">
