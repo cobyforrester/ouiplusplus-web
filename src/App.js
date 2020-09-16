@@ -19,7 +19,7 @@ function App() {
       <Router>
         <div className="App">
           <div>
-            <LinkTo props={{ location: "location" }} />
+            <LinkTo />
             <Switch>
               <Route exact path="/interpreter" component={Interpreter} />
               <Route exact path="/" component={DocumentationBodyEng} />

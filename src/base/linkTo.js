@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-export const LinkTo = (props) => {
-  const { location } = props;
+export const LinkTo = () => {
   let currPath = useLocation().pathname;
   let message = "";
   let link = "";
