@@ -1,4 +1,6 @@
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 const DocumentationBodyEng = ({ props }) => {
   return (
     <>
@@ -393,65 +395,65 @@ const PreBuiltFunctions = () => {
               arg1 = argument 1, arg2 = argument 2...
             </p>
             <dl className="row">
-              <dt className="col-sm-3">len(LIST|MAP|STRING)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">len(LIST|MAP|STRING)</dt>
+              <dd className="col-sm-8">
                 <p>Returns the length of the object.</p>
               </dd>
-              <dt className="col-sm-3">append(LIST, ITEM)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">append(LIST, ITEM)</dt>
+              <dd className="col-sm-8">
                 <p>Arg2 added to end of List specified. New List returned.</p>
               </dd>
 
-              <dt className="col-sm-3">addAt(LIST, ITEM, INT)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">addAt(LIST, ITEM, INT)</dt>
+              <dd className="col-sm-8">
                 <p>Adds arg2 to List at index specified by arg3</p>
               </dd>
 
-              <dt className="col-sm-3">get(LIST|STRING, INT)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">get(LIST|STRING, INT)</dt>
+              <dd className="col-sm-8">
                 <p>Returns value of at arg2 from arg1.</p>
               </dd>
-              <dt className="col-sm-3">get(MAP, ITEM)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">get(MAP, ITEM)</dt>
+              <dd className="col-sm-8">
                 <p>
                   Returns value attached to key from arg2 in the map at arg1.
                 </p>
               </dd>
-              <dt className="col-sm-3">remove(LIST, INT)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">remove(LIST, INT)</dt>
+              <dd className="col-sm-8">
                 <p>Value from arg1 removed at arg2 value. Returns new List.</p>
               </dd>
-              <dt className="col-sm-3">remove(MAP, ITEM)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">remove(MAP, ITEM)</dt>
+              <dd className="col-sm-8">
                 <p>
                   Removes key value pair from Map in arg1, with arg2 being key.
                   Returns new Map.
                 </p>
               </dd>
-              <dt className="col-sm-3">set(LIST, ITEM, INT)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">set(LIST, ITEM, INT)</dt>
+              <dd className="col-sm-8">
                 <p>
                   Sets value of List from arg1 at location in specified by arg3
                   to value specified in arg2, then returns new List.
                 </p>
               </dd>
-              <dt className="col-sm-3">put(MAP, ITEM, ITEM)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">put(MAP, ITEM, ITEM)</dt>
+              <dd className="col-sm-8">
                 <p>
                   Adds key and value pair to map in first argument, arg2 is key
                   and arg3 is value. If key already present overwrites value.
                   Then returns new Map.
                 </p>
               </dd>
-              <dt className="col-sm-3">sub(LIST|STRING, INT, INT)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">sub(LIST|STRING, INT, INT)</dt>
+              <dd className="col-sm-8">
                 <p>
                   Returns sublist or substring from argument one, with range of
                   inclusive at arg2 and exclusive of arg3. From arg2 to arg3.
                 </p>
               </dd>
-              <dt className="col-sm-3">getKeys(MAP)</dt>
-              <dd className="col-sm-9">
+              <dt className="col-sm-4">getKeys(MAP)</dt>
+              <dd className="col-sm-8">
                 <p>Returns array of keys from specified Map.</p>
               </dd>
             </dl>
@@ -482,12 +484,11 @@ const Variables = () => {
               Some example variable declarations are below.
             </p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
-  i = --10 + -(+10 * 11) / 7 % 2 #int
+  i = -10 + -(-+10 * 11) / 7 % 2 #int
   s = 'Hello, '
   s += 'World!' #string
   d = 0.10; #double
@@ -496,8 +497,7 @@ const Variables = () => {
   l = [10, [], 'yes'] #list
   m = $|'x':10, 'y':10, true:20| #map
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -524,9 +524,8 @@ const CustomFunctions = () => {
               Some example function declarations are below.
             </p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
   # two random functions
@@ -537,12 +536,11 @@ const CustomFunctions = () => {
     return a + b
   }
 
-  # printins result, one with function one with print()
+  # print results, one with function one with print()
   printTruth('Oui++ is so great!')
   print(addTwo(10, 12))
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -562,9 +560,8 @@ const Conditionals = () => {
             <h3 className="pb-3">Conditionals</h3>
             <p>Example statements below!</p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
   x = true
@@ -578,8 +575,7 @@ const Conditionals = () => {
     print('in else')
   }
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -599,9 +595,8 @@ const Comments = () => {
             <h3 className="pb-3">Comments</h3>
             <p>Single line: #, multi-line: ###</p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
   # this is a single line
@@ -614,8 +609,7 @@ const Comments = () => {
     Comment 
   ###
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -640,9 +634,8 @@ const Loops = () => {
               While loops take in one conditional statement.
             </p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
   arr = [1, 2, 3, 4, 5]
@@ -650,7 +643,7 @@ const Loops = () => {
   # while loop through arr
   print('WHILE LOOP:')
   i = 0
-  while(i < len(arr)) {
+  while(i <SyntaxHighlighter len(arr)) {
     print(get(arr, i))
     i+=1
   }
@@ -663,8 +656,7 @@ const Loops = () => {
     print(get(arr, i))
   }
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -687,16 +679,14 @@ const Print = () => {
               Newline added after every usage.
             </p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #select appropriate language
 
   print(10 + 100)
   print('Oui++ is the best, why did I print 110 before?')
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -720,13 +710,11 @@ const SelectingLanguage = () => {
               Comments excluded.
             </p>
 
-            <pre className="prettyprint">
-              <code>
-                {`
+            <SyntaxHighlighter language="python" style={github}>
+              {`
   lang:eng #this is selecting english as the language
                 `}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </div>
         </div>
         <div className="row">
@@ -737,4 +725,4 @@ const SelectingLanguage = () => {
   );
 };
 
-export { DocumentationBodyEng as DocumentationBody };
+export { DocumentationBodyEng };

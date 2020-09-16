@@ -1,2 +1,2 @@
-import { DocumentationBody } from "./documentation_eng";
-export { DocumentationBody };
+import { DocumentationBodyEng } from "./documentation_eng";
+export { DocumentationBodyEng };

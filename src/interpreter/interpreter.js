@@ -25,10 +25,12 @@ const InputBox = () => {
     <>
       <CodeMirror
         value={val}
+        autoCursor={false}
         options={{
           mode: "python",
           theme: "oceanic-next",
           lineNumbers: true,
+          autofocus: true,
         }}
         onChange={(editor, data, value) => {
           setVal(value);
