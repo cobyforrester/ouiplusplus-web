@@ -17,9 +17,7 @@ export const LinkTo = () => {
   return (
     <>
       <Link to={link}>
-        <div className="container p-4">
-          <button className="btn btn-info btn-lg btn-block">{message}</button>
-        </div>
+        <button className="btn btn-info btn-lg btn-block">{message}</button>
       </Link>
     </>
   );

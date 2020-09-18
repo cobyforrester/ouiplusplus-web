@@ -4,7 +4,6 @@
 
 .boxed {
   height: 600px !important;
-  border: 1px solid green;
   color: white;
   background-color: #304148;
   word-wrap: break-word;
