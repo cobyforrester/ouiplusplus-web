@@ -12,6 +12,11 @@ export const Interpreter = (props) => {
           <div className="col-6">
             <InputBox />
           </div>
+          <div className="col-6">
+            <div class="boxed">
+              <div className="container">Hello world</div>
+            </div>
+          </div>
         </div>
       </div>
     </>
