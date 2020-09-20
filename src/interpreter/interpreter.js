@@ -81,7 +81,7 @@ const SelectionBox = ({ output, setOutput, val }) => {
       }),
     };
     options.body = JSON.stringify(body);
-    fetch("https://oui-server.us-west-1.elasticbeanstalk.com/process", options)
+    fetch(process.env.REACT_APP_ENDPOINT, options)
       .then((res) => res.text())
       .then((data) => {
         setOutput(data);

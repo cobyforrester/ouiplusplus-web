@@ -12,6 +12,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { DocumentationBodyEng } from "./documentation";
 import { Interpreter } from "./interpreter";
 import { LinkTo } from "./base";
+require("dotenv").config();
 
 function App() {
   return (
