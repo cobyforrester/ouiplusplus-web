@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -56,6 +56,7 @@ const InputBox = ({ val, setVal }) => {
 };
 
 const SelectionBox = ({ output, setOutput, val, setVal }) => {
+  const { width } = useWindowDimensions();
   const onRun = () => {
     let body = { input: val };
     let options = {
@@ -75,42 +76,94 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
       });
   };
   return (
-    <div className="row no-gutter interpreter-input-top">
-      <div className="col-2 pt-2 file-name py-1 text-center">Main.ouipp</div>
-      <div className="col py-1 text-right">
-        <Dropdown>
-          <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
-            Example Programs
-          </Dropdown.Toggle>
+    <div className="container interpreter-input-top">
+      {width > 960 ? (
+        <div className="row no-gutter">
+          <div className="col col-xl-2 pt-2 file-name py-1 text-center underline">
+            Main.ouipp
+          </div>
+          <div className="col col-xl-8 py-1 text-right">
+            <Dropdown>
+              <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
+                Example Programs
+              </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  onClick={() => {
+                    setVal(getInitial());
+                  }}
+                >
+                  Intro
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setVal(getFib());
+                  }}
+                >
+                  Fibonacci Sequence
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <div className="col col-xl-2 py-1 text-center">
+            <Button
+              variant="outline-success"
               onClick={() => {
-                setVal(getInitial());
+                onRun();
               }}
             >
-              Intro
-            </Dropdown.Item>
-            <Dropdown.Item
-              onClick={() => {
-                setVal(getFib());
-              }}
-            >
-              Fibonacci Sequence
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-      <div className="col-2 py-1 text-center">
-        <Button
-          variant="outline-success"
-          onClick={() => {
-            onRun();
-          }}
-        >
-          Run
-        </Button>
-      </div>
+              Run
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="row">
+            <div className="col py-1 text-center">
+              <Button
+                variant="outline-success"
+                onClick={() => {
+                  onRun();
+                }}
+              >
+                Run
+              </Button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col py-1 text-center">
+              <Dropdown>
+                <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
+                  Example Programs
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => {
+                      setVal(getInitial());
+                    }}
+                  >
+                    Intro
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      setVal(getFib());
+                    }}
+                  >
+                    Fibonacci Sequence
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col file-name py-1 text-center underline">
+              Main.ouipp
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -144,3 +197,28 @@ str += 'Try running with RUN, and try'
 str += ' choosing a preset program from the list above! :)'
 print(str)`;
 };
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}

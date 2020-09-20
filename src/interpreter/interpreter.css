@@ -8,9 +8,14 @@
   word-wrap: break-word;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .file-name {
   color: white;
   background-color: #304148;
+  min-width: 120px !important;
 }
 
 .interpreter-input-top {
