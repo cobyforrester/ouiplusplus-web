@@ -9,39 +9,25 @@ require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/python/python");
 
 export const Interpreter = (props) => {
-  let initialVal = `lang:eng
-func fib(n) {
-  # generic function to calculate fibonacci number
-  if(n < 2) {
-    return n
-  }
-  arr = [0, 1] + [null] * (n - 1)
-  for i -> (2, n + 1) {
-      tmp = get(arr, i-1) + get(arr, i-2)
-      set(arr, tmp, i)
-    }
-    return get(arr, n)
-}
-  
-res = fib(10)
-
-print(res)
-  `;
+  let initialVal = getInitial();
   const [val, setVal] = useState(initialVal);
   const [output, setOutput] = useState("");
   return (
     <>
-      <div className="mx-3">
-        <div className="row">
-          <SelectionBox val={val} output={output} setOutput={setOutput} />
-        </div>
+      <div className="m-3">
         <div className="row">
           <div className="col-6">
+            <SelectionBox
+              val={val}
+              output={output}
+              setOutput={setOutput}
+              setVal={setVal}
+            />
             <InputBox val={val} setVal={setVal} />
           </div>
           <div className="col-6">
             <div className="boxed int-output">
-              <div className="container">{output}</div>
+              <div className="container py-2">{output}</div>
             </div>
           </div>
         </div>
@@ -71,7 +57,7 @@ const InputBox = ({ val, setVal }) => {
   );
 };
 
-const SelectionBox = ({ output, setOutput, val }) => {
+const SelectionBox = ({ output, setOutput, val, setVal }) => {
   const onRun = () => {
     let body = { input: val };
     let options = {
@@ -92,37 +78,64 @@ const SelectionBox = ({ output, setOutput, val }) => {
   };
   return (
     <>
-      <div className="col-12 my-2">
-        <Navbar bg="dark" variant="dark" expand="lg">
-          <Nav className="ml-auto mr-auto">
-            <Button
-              variant="outline-success"
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Nav className="ml-auto mr-auto">
+          <Button
+            variant="outline-success"
+            onClick={() => {
+              onRun();
+            }}
+          >
+            Run
+          </Button>
+          <NavDropdown title="Load Example" id="basic-nav-dropdown">
+            <NavDropdown.Item
               onClick={() => {
-                onRun();
+                setVal(getInitial());
               }}
             >
-              Run
-            </Button>
-            <NavDropdown title="Load Example" id="basic-nav-dropdown">
-              <NavDropdown.Item
-                onClick={() => {
-                  console.log("here");
-                }}
-              >
-                Action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
-      </div>
+              Intro
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              onClick={() => {
+                setVal(getFib());
+              }}
+            >
+              Fibonacci Sequence
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar>
     </>
   );
+};
+
+const getFib = () => {
+  return `lang:eng #this sets the language, remove for french
+func fib(n) {
+  # generic function to calculate fibonacci number
+  if(n < 2) {
+    return n
+  }
+  arr = [0, 1] + [null] * (n - 1)
+  for i -> (2, n + 1) {
+      tmp = get(arr, i-1) + get(arr, i-2)
+      set(arr, tmp, i)
+    }
+    return get(arr, n)
+}
+    
+  res = fib(10)
+  
+  print(res)
+    `;
+};
+
+const getInitial = () => {
+  return `lang:eng #this sets the language, remove for french
+str = 'Hello! \\n'
+str += 'Welcome to my interpreter for Oui++ \\n'
+str += 'Try running with RUN, and try'
+str += ' choosing a preset program from the list above! :)'
+print(str)`;
 };
