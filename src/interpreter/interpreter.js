@@ -9,21 +9,38 @@ require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/python/python");
 
 export const Interpreter = (props) => {
-  let initialVal = "lang:eng\nprint(10-100)\nfor i -> (0, 100) {\n}";
+  let initialVal = `lang:eng
+func fib(n) {
+  # generic function to calculate fibonacci number
+  if(n < 2) {
+    return n
+  }
+  arr = [0, 1] + [null] * (n - 1)
+  for i -> (2, n + 1) {
+      tmp = get(arr, i-1) + get(arr, i-2)
+      set(arr, tmp, i)
+    }
+    return get(arr, n)
+}
+  
+res = fib(10)
+
+print(res)
+  `;
   const [val, setVal] = useState(initialVal);
   const [output, setOutput] = useState("");
   return (
     <>
       <div className="mx-3">
         <div className="row">
-          <SelectionBox output={output} setOutput={setOutput} />
+          <SelectionBox val={val} output={output} setOutput={setOutput} />
         </div>
         <div className="row">
           <div className="col-6">
             <InputBox val={val} setVal={setVal} />
           </div>
           <div className="col-6">
-            <div className="boxed">
+            <div className="boxed int-output">
               <div className="container">{output}</div>
             </div>
           </div>
@@ -54,9 +71,27 @@ const InputBox = ({ val, setVal }) => {
   );
 };
 
-const SelectionBox = ({ output, setOutput }) => {
+const SelectionBox = ({ output, setOutput, val }) => {
   const onRun = () => {
-    // FETCH REQUEST TO BACKEND
+    let body = { input: val };
+    let options = {
+      method: "POST",
+      headers: new Headers({
+        "content-type": "application/json",
+      }),
+    };
+    options.body = JSON.stringify(body);
+    fetch(
+      "http://ouiplusplusserver-env.eba-6xamj4sm.us-west-1.elasticbeanstalk.com/process",
+      options
+    )
+      .then((res) => res.text())
+      .then((data) => {
+        setOutput(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>
@@ -67,7 +102,6 @@ const SelectionBox = ({ output, setOutput }) => {
               variant="outline-success"
               onClick={() => {
                 onRun();
-                console.log("here");
               }}
             >
               Run
