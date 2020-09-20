@@ -3,10 +3,19 @@
 }
 
 .boxed {
-  height: 857px !important;
   color: white;
   background-color: #304148;
   word-wrap: break-word;
+}
+
+.file-name {
+  color: white;
+  background-color: #304148;
+}
+
+.interpreter-input-top {
+  color: white;
+  background-color: #45565e;
 }
 
 .int-output div {

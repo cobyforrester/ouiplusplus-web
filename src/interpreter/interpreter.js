@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import Dropdown from "react-bootstrap/Dropdown";
 
 import { UnControlled as CodeMirror } from "react-codemirror2";
 require("codemirror/mode/javascript/javascript");
@@ -14,9 +12,9 @@ export const Interpreter = (props) => {
   const [output, setOutput] = useState("");
   return (
     <>
-      <div className="m-3">
-        <div className="row">
-          <div className="col-6">
+      <div className="pt-2">
+        <div className="row no-gutters">
+          <div className="col">
             <SelectionBox
               val={val}
               output={output}
@@ -25,8 +23,8 @@ export const Interpreter = (props) => {
             />
             <InputBox val={val} setVal={setVal} />
           </div>
-          <div className="col-6">
-            <div className="boxed int-output">
+          <div className="col boxed border-left">
+            <div className="int-output">
               <div className="container py-2">{output}</div>
             </div>
           </div>
@@ -77,36 +75,43 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
       });
   };
   return (
-    <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Nav className="ml-auto mr-auto">
-          <Button
-            variant="outline-success"
-            onClick={() => {
-              onRun();
-            }}
-          >
-            Run
-          </Button>
-          <NavDropdown title="Load Example" id="basic-nav-dropdown">
-            <NavDropdown.Item
+    <div className="row no-gutter interpreter-input-top">
+      <div className="col-2 pt-2 file-name py-1 text-center">Main.ouipp</div>
+      <div className="col py-1 text-right">
+        <Dropdown>
+          <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
+            Example Programs
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item
               onClick={() => {
                 setVal(getInitial());
               }}
             >
               Intro
-            </NavDropdown.Item>
-            <NavDropdown.Item
+            </Dropdown.Item>
+            <Dropdown.Item
               onClick={() => {
                 setVal(getFib());
               }}
             >
               Fibonacci Sequence
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar>
-    </>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      <div className="col-2 py-1 text-center">
+        <Button
+          variant="outline-success"
+          onClick={() => {
+            onRun();
+          }}
+        >
+          Run
+        </Button>
+      </div>
+    </div>
   );
 };
 
@@ -133,8 +138,8 @@ func fib(n) {
 
 const getInitial = () => {
   return `lang:eng #this sets the language, remove for french
-str = 'Hello! \\n'
-str += 'Welcome to my interpreter for Oui++ \\n'
+str = 'Hello! \\n\\n'
+str += 'Welcome to my interpreter for Oui++ \\n\\n'
 str += 'Try running with RUN, and try'
 str += ' choosing a preset program from the list above! :)'
 print(str)`;
