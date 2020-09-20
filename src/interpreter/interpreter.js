@@ -79,10 +79,10 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
     <div className="container interpreter-input-top">
       {width > 960 ? (
         <div className="row no-gutter">
-          <div className="col col-xl-2 pt-2 file-name py-1 text-center underline">
+          <div className="col col-lg-2 pt-2 file-name py-1 text-center underline">
             Main.ouipp
           </div>
-          <div className="col col-xl-8 py-1 text-right">
+          <div className="col col-m-8 py-1 text-right">
             <Dropdown>
               <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
                 Example Programs
@@ -106,7 +106,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
               </Dropdown.Menu>
             </Dropdown>
           </div>
-          <div className="col col-xl-2 py-1 text-center">
+          <div className="col col-lg-2 py-1 text-center">
             <Button
               variant="outline-success"
               onClick={() => {
