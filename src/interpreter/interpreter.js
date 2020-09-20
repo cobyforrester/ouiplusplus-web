@@ -82,7 +82,7 @@ const SelectionBox = ({ output, setOutput, val }) => {
     };
     options.body = JSON.stringify(body);
     fetch(
-      "http://ouiplusplusserver-env.eba-6xamj4sm.us-west-1.elasticbeanstalk.com/process",
+      "https://ouiplusplusserver-env.eba-6xamj4sm.us-west-1.elasticbeanstalk.com/process",
       options
     )
       .then((res) => res.text())
