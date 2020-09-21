@@ -17,7 +17,7 @@ export const LinkTo = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row container-3 p-2">
+        <div className="row no-gutters container-3 p-2">
           <div class="col col-lg-2">
             <Link to={link} style={{ textDecoration: "none" }}>
               <div class="btn-cust btn-three text-center">

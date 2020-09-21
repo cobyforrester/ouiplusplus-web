@@ -35,7 +35,6 @@ export const Interpreter = (props) => {
             </div>
           </div>
         </div>
-        <div className="row m-1"></div>
       </div>
     </>
   );
@@ -104,6 +103,13 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
+                    setVal(getFizzBuzz());
+                  }}
+                >
+                  FizzBuzz
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
                     setVal(getFib());
                   }}
                 >
@@ -154,6 +160,13 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
+                      setVal(getFizzBuzz());
+                    }}
+                  >
+                    FizzBuzz
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
                       setVal(getFib());
                     }}
                   >
@@ -188,10 +201,10 @@ func fib(n) {
     }
     return get(arr, n)
 }
-    
-  res = fib(10)
-  
-  print('Resultant Fibonacci Number: ' + res)
+
+# run and print result from function
+res = fib(10)
+print('Resultant Fibonacci Number: ' + res)
     `;
 };
 
@@ -199,11 +212,36 @@ const getInitial = () => {
   return `lang:eng #this sets the language, remove for french
 str = 'Hello! \\n\\n'
 str += 'Welcome to my interpreter for Oui++ \\n\\n'
-str += 'Try running with RUN, and try'
+str += 'Try running with Run, and try'
 str += ' choosing a preset program from the list above! :)'
 print(str)`;
 };
 
+const getFizzBuzz = () => {
+  return `lang:eng #this sets the language, remove for french
+func fizzBuzz(n) {
+  # generic fizzbuzz implementation
+  s = ''
+  for i -> (1, n + 1) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      s += 'FizzBuzz\\n'
+    } else if (i % 3 == 0) {
+      s += 'Fizz\\n'
+    } elif (i % 5 == 0) {
+      s += 'Buzz\\n'
+    } else {
+      s += i + '\\n'
+    }
+  }
+  return s
+}
+
+# output result
+s = fizzBuzz(30)
+print(s)`;
+};
+
+// WINDOW SIZING HELP
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {

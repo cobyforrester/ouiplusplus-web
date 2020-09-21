@@ -56,6 +56,13 @@
   opacity: 0;
 }
 
+@media only screen and (max-width: 334px) {
+  .btn-cust {
+    width: 158px;
+    height: 64px !important;
+  }
+}
+
 /*
  BUTTON STYLING FOR SWITCHING LANGUAGE
 */
@@ -86,5 +93,11 @@
    .button5 {
     display: block;
     margin: 0.4em auto;
+  }
+}
+
+@media only screen and (max-width: 334px) {
+  .button5 {
+    padding: 0.3em 0.05em;
   }
 }
