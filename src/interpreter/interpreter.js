@@ -163,7 +163,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
               </Dropdown>
             </div>
           </div>
-          <div className="row">
+          <div className="container-fluid">
             <div className="col file-name py-1 text-center underline">
               Main.ouipp
             </div>
