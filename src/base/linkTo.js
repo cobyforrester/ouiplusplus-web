@@ -8,17 +8,29 @@ export const LinkTo = () => {
   let link = "";
 
   if (currPath === "/interpreter") {
-    message = "Link to Documentation";
+    message = "Documentation Here!";
     link = "/";
   } else {
-    message = "Link to Interpreter";
+    message = "Live Interpreter Here!";
     link = "/interpreter";
   }
   return (
     <>
-      <Link to={link}>
-        <button className="btn btn-info btn-lg btn-block">{message}</button>
-      </Link>
+      <div className="container-fluid">
+        <div className="row container-3 p-2">
+          <div class="col col-lg-2">
+            <Link to={link} style={{ textDecoration: "none" }}>
+              <div class="btn-cust btn-three text-center">
+                <span>{message}</span>
+              </div>
+            </Link>
+          </div>
+          <div class="col col-lg-8"></div>
+          <div className="col col-lg-2 text-right">
+            <button class="button5">Français</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

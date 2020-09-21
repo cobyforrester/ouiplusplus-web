@@ -13,7 +13,7 @@ export const Interpreter = (props) => {
   const { width } = useWindowDimensions();
   return (
     <>
-      <div className="container-fluid mt-2">
+      <div className="container-fluid">
         <div className="row no-gutters">
           <div className="col-lg-6">
             <SelectionBox
@@ -191,7 +191,7 @@ func fib(n) {
     
   res = fib(10)
   
-  print(res)
+  print('Resultant Fibonacci Number: ' + res)
     `;
 };
 

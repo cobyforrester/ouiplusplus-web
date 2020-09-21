@@ -25,7 +25,7 @@ const DocumentationBodyEng = ({ props }) => {
 const BodyTop = () => {
   return (
     <>
-      <div className="text-center">
+      <div className="text-center pt-2">
         <h1>Oui++ Documentation</h1>
         <p>By Coby Forrester</p>
       </div>
