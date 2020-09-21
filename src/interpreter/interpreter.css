@@ -1,6 +1,19 @@
 .CodeMirror {
   height: 800px !important;
 }
+@media only screen and (max-width: 991px) {
+  .CodeMirror {
+    height: 300px !important;
+  }
+}
+.int-output {
+  min-height: 100px;
+}
+@media only screen and (max-width: 991px) {
+  .int-output {
+    height: 300px !important;
+  }
+}
 
 .boxed {
   color: white;
@@ -25,4 +38,14 @@
 
 .int-output div {
   white-space: pre-wrap;
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.padding-output {
+  padding-top: 11px;
+  padding-bottom: 11px;
 }

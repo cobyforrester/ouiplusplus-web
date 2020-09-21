@@ -10,11 +10,12 @@ export const Interpreter = (props) => {
   let initialVal = getInitial();
   const [val, setVal] = useState(initialVal);
   const [output, setOutput] = useState("");
+  const { width } = useWindowDimensions();
   return (
     <>
-      <div className="pt-2">
+      <div className="container-fluid mt-2">
         <div className="row no-gutters">
-          <div className="col">
+          <div className="col-lg-6">
             <SelectionBox
               val={val}
               output={output}
@@ -23,7 +24,12 @@ export const Interpreter = (props) => {
             />
             <InputBox val={val} setVal={setVal} />
           </div>
-          <div className="col boxed border-left">
+          <div
+            className={`col-lg-6 boxed ${width > 991 ? "border-left" : ""} `}
+          >
+            <div className="container-fluid interpreter-input-top">
+              <div className="col padding-output">Output</div>
+            </div>
             <div className="int-output">
               <div className="container py-2">{output}</div>
             </div>
@@ -76,13 +82,13 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
       });
   };
   return (
-    <div className="container interpreter-input-top">
-      {width > 960 ? (
+    <div className="container-fluid interpreter-input-top">
+      {width > 474 ? (
         <div className="row no-gutter">
           <div className="col col-lg-2 pt-2 file-name py-1 text-center underline">
             Main.ouipp
           </div>
-          <div className="col col-m-8 py-1 text-right">
+          <div className="col col-m-8 py-1 text-left">
             <Dropdown>
               <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
                 Example Programs
