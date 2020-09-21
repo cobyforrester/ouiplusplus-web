@@ -26,7 +26,7 @@ export const LinkTo = () => {
             </Link>
           </div>
           <div class="col col-lg-8"></div>
-          <div className="col col-lg-2 text-right">
+          <div className="col col-lg-2 text-right pt-2">
             <button class="button5">Français</button>
           </div>
         </div>
