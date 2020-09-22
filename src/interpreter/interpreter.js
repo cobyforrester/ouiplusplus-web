@@ -91,7 +91,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
           <div className="col col-m-8 py-1 text-left">
             <Dropdown>
               <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
-                Example Programs
+                Sample Programs
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -118,6 +118,14 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   }}
                 >
                   Fibonacci Sequence
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setVal(getMergeSort());
+                    localStorage["code"] = getMergeSort();
+                  }}
+                >
+                  Merge Sort
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -179,6 +187,14 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   >
                     Fibonacci Sequence
                   </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      setVal(getMergeSort());
+                      localStorage["code"] = getMergeSort();
+                    }}
+                  >
+                    Merge Sort
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
@@ -194,6 +210,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
   );
 };
 
+// ALL PRESET CODE
 const getFib = () => {
   return `lang:eng #this sets the language, remove for french
 func fib(n) {
@@ -217,6 +234,13 @@ print('Resultant Fibonacci Number: ' + res)
 
 const getInitial = () => {
   return `lang:eng #this sets the language, remove for french
+###
+#LISTS = []
+#MAP = $||
+#STRINGS = '' OR ""
+#FUNCTION DECLARATION = fonc OR func
+#TO PRINT = print() or imprimer()
+###
 str = 'Hello! \\n\\n'
 str += 'Welcome to my interpreter for Oui++ \\n\\n'
 str += 'Try running with Run, and try'
@@ -246,6 +270,59 @@ func fizzBuzz(n) {
 # output result
 s = fizzBuzz(30)
 print(s)`;
+};
+
+const getMergeSort = () => {
+  return `lang:eng #this sets the language, remove for french
+func mergeSort(arr){ 
+    if (len(arr) >1) {
+        mid = len(arr) / 2 # Finding the mid of the array
+        L = sub(arr, 0, mid) # Dividing the array elements  
+        R = sub(arr, mid, len(arr)) # into 2 halves
+
+        L = mergeSort(L) # Sorting the first half
+        R = mergeSort(R) # Sorting the second half
+
+        # variables for adding L and R into arr
+        i = 0
+        j = 0
+        k = 0
+        # Copy data to temp arrays L[] and R[]
+        while (i < len(L) && j < len(R)){
+            if (get(L, i) < get(R, j)) {
+              tmp = get(L, i)
+              arr = set(arr, tmp, k)
+              i+= 1
+            } else {
+              tmp = get(R, j)
+              arr = set(arr, tmp, k)
+              j+= 1
+            }
+            k+= 1
+        }
+        # Checking if any element was left in both
+        while (i < len(L)) {
+          tmp = get(L, i)
+          arr = set(arr, tmp, k)
+          i+= 1
+          k+= 1
+        }
+        while (j < len(R)) {
+          tmp = get(R, j)
+          arr = set(arr, tmp, k)
+          j+= 1
+          k+= 1
+        }
+    }
+  return arr
+}
+#sort numbers
+arrNums = [9, 100, 7.5, -1.4, 0, 10, -99.6, 100]
+print(mergeSort(arrNums))
+#sort strings
+arrStr = ['abc', 'AA', 'aa','Oui++', 'is', 'great', '!', 'zzz']
+print(mergeSort(arrStr))
+`;
 };
 
 // WINDOW SIZING HELP

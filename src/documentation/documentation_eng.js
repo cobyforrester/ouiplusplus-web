@@ -44,7 +44,7 @@ const Overview = () => {
               Oui++ is an attempt at a language that is natively in both English
               and French! While it is quite similar to python in structure, it
               has many distinct differences. It is interpreted (by java),
-              dynamically typed, pass by object (I know, how inefficient right),
+              dynamically typed, pass by value (I know, how inefficient right),
               and whitespace is generally ignored excluding most newlines. It is
               obviously a personal project, and yet it supports many aspects
               necessary in general purpose languages! Enjoy looking around at
@@ -73,76 +73,109 @@ const KeyWords = () => {
                 <tr className="borderless">
                   <th>English</th>
                   <th>French</th>
+                  <th>Case Sensitive</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>print</td>
                   <td>imprimer</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>if</td>
                   <td>si</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>else if, elif</td>
                   <td>ou bien si</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>else</td>
                   <td>sinon</td>
-                </tr>
-                <tr>
-                  <td>for</td>
-                  <td>pour</td>
-                </tr>
-                <tr>
-                  <td>while</td>
-                  <td>tant que</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>func</td>
                   <td>fonc</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>return</td>
+                  <td>rendre</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>for</td>
+                  <td>pour</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>while</td>
+                  <td>tant que</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>null</td>
-                  <td>tmp</td>
+                  <td>nul, nulle</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>true</td>
+                  <td>vrai</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>false</td>
+                  <td>faux</td>
+                  <td>No</td>
                 </tr>
                 <tr>
                   <td>len</td>
-                  <td>tmp</td>
+                  <td>long</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>append</td>
-                  <td>tmp</td>
+                  <td>ajoutes</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>addAt</td>
-                  <td>tmp</td>
+                  <td>ajoutesPos</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>get</td>
-                  <td>tmp</td>
+                  <td>obtiens</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>remove</td>
-                  <td>tmp</td>
+                  <td>retires</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>set</td>
-                  <td>tmp</td>
+                  <td>remplaces</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>put</td>
-                  <td>tmp</td>
+                  <td>mets</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>sub</td>
-                  <td>tmp</td>
+                  <td>sub</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>getKeys</td>
-                  <td>tmp</td>
+                  <td>obtiensCles, obtiensClés</td>
+                  <td>Yes</td>
                 </tr>
               </tbody>
             </table>
@@ -181,7 +214,9 @@ const Types = () => {
               <dt className="col-sm-2">String</dt>
               <dd className="col-sm-10">
                 <p>
-                  '' AND "" valid. \ escapes characters. \n=newline, \t=tab.
+                  <code>''</code> AND <code>""</code> valid. <code>\</code>{" "}
+                  escapes characters. <code>\n</code>
+                  =newline, <code>\t</code>=tab.
                 </p>
               </dd>
               <dt className="col-sm-2">List</dt>
@@ -477,7 +512,7 @@ const Variables = () => {
             <p>
               Variables do not need to have a type when initialized. They have
               function scope, and NO variable hoisting. Regex for valid custom
-              variable names is: [A-Za-z]+[A-Za-z0-9]*
+              variable names is: <code>[A-Za-z]+[A-Za-z0-9]*</code>
               <br />
               Semicolons optional.
               <br />
@@ -705,9 +740,11 @@ const SelectingLanguage = () => {
           <div className="col align-self-center">
             <h3 className="pb-3">Selecting Language</h3>
             <p>
-              Default is French. Add lang:eng for english, and optional to add
-              lang:fr for french. MUST be added at top of file on its own line.
-              Comments excluded.
+              Default is French. Add <code>lang:eng</code> for english, and
+              optional to add <code>lang:fr</code> for french. MUST be added at
+              top of file on its own line. Comments excluded. <br /> Has no
+              effect on keywords, both English and French always work, just for
+              error messages.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
