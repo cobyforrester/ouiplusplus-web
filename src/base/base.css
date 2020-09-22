@@ -3,7 +3,9 @@
 .container-3 {
   /*background: #8499b1;*/
   /*background: #6a7d94;*/
-  background: linear-gradient(to bottom right, #1786a8 40%, #07a6d6 100%);
+  /*background: linear-gradient(to bottom right, #47596d 40%, #6a7d94 100%);*/
+  /*background: linear-gradient(to bottom right, #7c714d 40%, #d39d07 100%);*/
+  background: #776b44;
   /*background: linear-gradient(to bottom left, #8499b1 40%, #6a7d94 100%);*/
 }
 
