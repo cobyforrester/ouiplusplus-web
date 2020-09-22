@@ -7,7 +7,7 @@ require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/python/python");
 
 export const Interpreter = (props) => {
-  let initialVal = getInitial();
+  let initialVal = localStorage["code"] || getInitial();
   const [val, setVal] = useState(initialVal);
   const [output, setOutput] = useState("");
   const { width } = useWindowDimensions();
@@ -54,6 +54,7 @@ const InputBox = ({ val, setVal }) => {
         }}
         onChange={(editor, data, value) => {
           setVal(value);
+          localStorage["code"] = value;
         }}
       />
     </>
@@ -97,6 +98,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                 <Dropdown.Item
                   onClick={() => {
                     setVal(getInitial());
+                    localStorage["code"] = getInitial();
                   }}
                 >
                   Intro
@@ -104,6 +106,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                 <Dropdown.Item
                   onClick={() => {
                     setVal(getFizzBuzz());
+                    localStorage["code"] = getFizzBuzz();
                   }}
                 >
                   FizzBuzz
@@ -111,6 +114,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                 <Dropdown.Item
                   onClick={() => {
                     setVal(getFib());
+                    localStorage["code"] = getFib();
                   }}
                 >
                   Fibonacci Sequence
@@ -131,7 +135,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
         </div>
       ) : (
         <>
-          <div className="row">
+          <div className="row no-gutter">
             <div className="col py-1 text-center">
               <Button
                 variant="outline-success"
@@ -143,7 +147,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
               </Button>
             </div>
           </div>
-          <div className="row">
+          <div className="row no-gutter">
             <div className="col py-1 text-center">
               <Dropdown>
                 <Dropdown.Toggle variant="outline-light" id="dropdown-basic">
@@ -154,6 +158,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   <Dropdown.Item
                     onClick={() => {
                       setVal(getInitial());
+                      localStorage["code"] = getInitial();
                     }}
                   >
                     Intro
@@ -161,6 +166,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   <Dropdown.Item
                     onClick={() => {
                       setVal(getFizzBuzz());
+                      localStorage["code"] = getFizzBuzz();
                     }}
                   >
                     FizzBuzz
@@ -168,6 +174,7 @@ const SelectionBox = ({ output, setOutput, val, setVal }) => {
                   <Dropdown.Item
                     onClick={() => {
                       setVal(getFib());
+                      localStorage["code"] = getFib();
                     }}
                   >
                     Fibonacci Sequence
