@@ -104,7 +104,7 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>return</td>
-                  <td>rendre</td>
+                  <td>retourner</td>
                   <td>No</td>
                 </tr>
                 <tr>
@@ -139,32 +139,32 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>append</td>
-                  <td>ajoutes</td>
+                  <td>ajouter</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
                   <td>addAt</td>
-                  <td>ajoutesPos</td>
+                  <td>ajouterÀ, ajouterA</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
                   <td>get</td>
-                  <td>obtiens</td>
+                  <td>obtenir</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
                   <td>remove</td>
-                  <td>retires</td>
+                  <td>retirer</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
                   <td>set</td>
-                  <td>remplaces</td>
+                  <td>remplacer</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
                   <td>put</td>
-                  <td>mets</td>
+                  <td>mettre</td>
                   <td>Yes</td>
                 </tr>
                 <tr>
@@ -174,7 +174,7 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>getKeys</td>
-                  <td>obtiensCles, obtiensClés</td>
+                  <td>obtenirClés, obtenirCles</td>
                   <td>Yes</td>
                 </tr>
               </tbody>
