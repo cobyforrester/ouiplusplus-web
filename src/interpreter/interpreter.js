@@ -221,7 +221,7 @@ func fib(n) {
   arr = [0, 1] + [null] * (n - 1)
   for i -> (2, n + 1) {
       tmp = get(arr, i-1) + get(arr, i-2)
-      set(arr, tmp, i)
+      arr = set(arr, tmp, i)
     }
     return get(arr, n)
 }

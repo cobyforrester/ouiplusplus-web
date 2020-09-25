@@ -1,7 +1,7 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
-const DocumentationBodyEng = ({ props }) => {
+const DocumentationBodyFR = ({ props }) => {
   return (
     <>
       <BodyTop />
@@ -27,7 +27,7 @@ const BodyTop = () => {
     <>
       <div className="text-center pt-2">
         <h1>Oui++ Documentation</h1>
-        <p>By Coby Forrester</p>
+        <p>Par Coby Forrester</p>
       </div>
     </>
   );
@@ -41,14 +41,17 @@ const Overview = () => {
           <div className="col align-self-center">
             <h3>Overview</h3>
             <p>
-              Oui++ is an attempt at a language that is natively in both English
-              and French! While it is quite similar to python in structure, it
-              has many distinct differences. It is interpreted (by java),
-              dynamically typed, pass by value (I know, how inefficient right),
-              and whitespace is generally ignored excluding most newlines. It is
-              obviously a personal project, and yet it supports many aspects
-              necessary in general purpose languages! Enjoy looking around at
-              the english documentation below :)
+              Oui++ est un language de programmation, écrit à la fois en
+              français et en anglais ! Bien qu'il possède une structure
+              similaire à celle de Python, Oui++ est différent de plusieurs
+              manières distinctes. Ce language, interprété (par Java), est typé
+              dynamiquement, emploie le passer-par-valeur (je sais, très
+              inéfficace n'est-ce-pas) et les espaces sont généralement ignorés,
+              à l'exclusion de la plupart des nouvelles lignes. Ce language est
+              manifestement un projet personnel et pourtant il prend en charge
+              de nombreux aspects nécessaires dans les langues à usages
+              générales ! La documentation en français est disponible ci-dessous.
+              Enjoy :)
             </p>
           </div>
         </div>
@@ -66,116 +69,116 @@ const KeyWords = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col-5 align-self-center">
-            <h3>Key Words</h3>
-            <p>A list of all keywords used.</p>
+            <h3>Mots clés</h3>
+            <p>Liste de tous les mots clés utilisés.</p>
             <table className="table table-hover">
               <thead>
                 <tr className="borderless">
-                  <th>English</th>
-                  <th>French</th>
-                  <th>Case Sensitive</th>
+                  <th>Anglais</th>
+                  <th>Français</th>
+                  <th>Sensible aux majuscules et minuscules</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>print</td>
                   <td>imprimer</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>if</td>
                   <td>si</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>else if, elif</td>
                   <td>ou bien si</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>else</td>
                   <td>sinon</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>func</td>
                   <td>fonc</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>return</td>
                   <td>retourner</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>for</td>
                   <td>pour</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>while</td>
                   <td>tant que</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>null</td>
                   <td>nul, nulle</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>true</td>
                   <td>vrai</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>false</td>
                   <td>faux</td>
-                  <td>No</td>
+                  <td>Non</td>
                 </tr>
                 <tr>
                   <td>len</td>
                   <td>long</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>append</td>
                   <td>ajouter</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>addAt</td>
                   <td>ajouterÀ, ajouterA</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>get</td>
                   <td>obtenir</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>remove</td>
                   <td>retirer</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>set</td>
                   <td>remplacer</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>put</td>
                   <td>mettre</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>sub</td>
                   <td>sub</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
                 <tr>
                   <td>getKeys</td>
                   <td>obtenirClés, obtenirCles</td>
-                  <td>Yes</td>
+                  <td>Oui</td>
                 </tr>
               </tbody>
             </table>
