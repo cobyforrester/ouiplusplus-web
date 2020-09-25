@@ -18,15 +18,15 @@ export const LinkTo = () => {
     <>
       <div className="container-fluid">
         <div className="row no-gutters container-3 p-2">
-          <div class="col-2 col-lg-2">
+          <div class="col-1 col-xs-2">
             <Link to={link} style={{ textDecoration: "none" }}>
               <div class="btn-cust btn-three text-center">
                 <span>{message}</span>
               </div>
             </Link>
           </div>
-          <div class="col-8 col-lg-8"></div>
-          <div className="col-2 col-lg-2 text-right pt-2">
+          <div class="col col-lg-8"></div>
+          <div className="col col-lg-2 text-right pt-2">
             <button class="button5" onClick={() => alert("Coming soon!")}>
               Français
             </button>
