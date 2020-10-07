@@ -1,3 +1,3 @@
-import { LinkTo } from "./LinkTo";
-import { LinkToFr } from "./LinkToFr";
+import { LinkTo } from "./linkTo";
+import { LinkToFr } from "./linkToFr";
 export { LinkTo, LinkToFr };
