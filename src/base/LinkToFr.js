@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-export const LinkTo = ({ language, setLanguage }) => {
+export const LinkToFr = ({ language, setLanguage }) => {
   let currPath = useLocation().pathname;
   let message = "";
   let link = "";
 
   if (currPath === "/interpreter") {
-    message = "Documentation Here!";
+    message = "Documentation Ici!";
     link = "/";
   } else {
-    message = "Live Interpreter Here!";
+    message = "Interpréteur Ici!";
     link = "/interpreter";
   }
   return (
@@ -30,11 +30,11 @@ export const LinkTo = ({ language, setLanguage }) => {
             <button
               className="button5"
               onClick={() => {
-                localStorage["language"] = "francais";
-                setLanguage("francais");
+                localStorage["language"] = "english";
+                setLanguage("english");
               }}
             >
-              Français
+              English
             </button>
           </div>
         </div>
@@ -43,4 +43,4 @@ export const LinkTo = ({ language, setLanguage }) => {
   );
 };
 
-export default LinkTo;
+export default LinkToFr;

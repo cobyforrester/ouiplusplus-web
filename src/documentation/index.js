@@ -1,2 +1,3 @@
 import { DocumentationBodyEng } from "./documentation_eng";
-export { DocumentationBodyEng };
+import { DocumentationBodyFr } from "./documentation_fr";
+export { DocumentationBodyEng, DocumentationBodyFr };

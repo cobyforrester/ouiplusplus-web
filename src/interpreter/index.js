@@ -1,2 +1,3 @@
 import { Interpreter } from "./interpreter";
-export { Interpreter };
+import { InterpreterFr } from "./interpreter_fr";
+export { Interpreter, InterpreterFr };

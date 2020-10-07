@@ -1,7 +1,7 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
-const DocumentationBodyFR = ({ props }) => {
+const DocumentationBodyFr = ({ props }) => {
   return (
     <>
       <BodyTop />
@@ -28,6 +28,7 @@ const BodyTop = () => {
       <div className="text-center pt-2">
         <h1>Oui++ Documentation</h1>
         <p>Par Coby Forrester</p>
+        <p>Traduit Par Julie Poirson</p>
       </div>
     </>
   );
@@ -39,7 +40,7 @@ const Overview = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3>Overview</h3>
+            <h3>Aperçu</h3>
             <p>
               Oui++ est un language de programmation, écrit à la fois en
               français et en anglais ! Bien qu'il possède une structure
@@ -50,8 +51,8 @@ const Overview = () => {
               à l'exclusion de la plupart des nouvelles lignes. Ce language est
               manifestement un projet personnel et pourtant il prend en charge
               de nombreux aspects nécessaires dans les langues à usages
-              générales ! La documentation en français est disponible ci-dessous.
-              Enjoy :)
+              générales ! La documentation en français est disponible
+              ci-dessous. Enjoy :)
             </p>
           </div>
         </div>
@@ -76,7 +77,7 @@ const KeyWords = () => {
                 <tr className="borderless">
                   <th>Anglais</th>
                   <th>Français</th>
-                  <th>Sensible aux majuscules et minuscules</th>
+                  <th>Sensible à la casse</th>
                 </tr>
               </thead>
               <tbody>
@@ -122,7 +123,7 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>null</td>
-                  <td>nul, nulle</td>
+                  <td>null</td>
                   <td>Non</td>
                 </tr>
                 <tr>
@@ -207,42 +208,42 @@ const Types = () => {
 
               <dt className="col-sm-2">Double</dt>
               <dd className="col-sm-10">
-                <p>8 bytes. 15-16 points of precision.</p>
+                <p>8 bytes. 15-16 points de précisions.</p>
               </dd>
 
               <dt className="col-sm-2">Boolean</dt>
               <dd className="col-sm-10">
-                <p>true (vrai) OR false (faux). Case insensitive.</p>
+                <p>vrai OU faux. Insensible à la casse.</p>
               </dd>
               <dt className="col-sm-2">String</dt>
               <dd className="col-sm-10">
                 <p>
-                  <code>''</code> AND <code>""</code> valid. <code>\</code>{" "}
-                  escapes characters. <code>\n</code>
-                  =newline, <code>\t</code>=tab.
+                  <code>''</code> ET <code>""</code> sont valides.{" "}
+                  <code>\</code> caractère d'échappement. <code>\n</code>
+                  =nouvelle ligne, <code>\t</code>=tab.
                 </p>
               </dd>
               <dt className="col-sm-2">List</dt>
               <dd className="col-sm-10">
                 <p>
-                  Mutable. Takes any type as value. Ex:{" "}
-                  <code>['hello', true, (100 - 2 ^ 10), [10]]</code>
+                  Mutable. Accepte toute sorte de type comme valeur. Ex:{" "}
+                  <code>['bonjour', vrai, (100 - 2 ^ 10), [10]]</code>
                 </p>
               </dd>
               <dt className="col-sm-2">Map</dt>
               <dd className="col-sm-10">
                 <p>
-                  Mutable. Insert order maintained. No duplicates. Takes any
-                  type as key or value. Ex:{" "}
-                  <code>$|'x':10, 'y':10, true:20|</code>
+                  Mutable. Ordre d'insertion maintenu. Pas de doublon. Accepte
+                  toute sorte de type comme valeur ou clé. Ex:{" "}
+                  <code>$|'x':10, 'y':10, vrai:20|</code>
                 </p>
               </dd>
               <dt className="col-sm-2">Null</dt>
               <dd className="col-sm-10">
                 <p>
-                  Type representing no value. Returned if function returns
-                  nothing, can be assigned to variables as well. Case
-                  insensitive.
+                  Type ne représentant aucune valeur. Est imprimé si la fonction
+                  ne retourne rien, peut aussi bien être assigné à des
+                  variables. Insensible à la casse.
                 </p>
               </dd>
             </dl>
@@ -262,71 +263,78 @@ const BooleanOperators = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Boolean Operators (Return boolean values)</h3>
+            <h3 className="pb-3">
+              Opérateurs booléens (Retourne des valeurs bouléennes)
+            </h3>
             <dl className="row">
               <dt className="col-sm-1">{"!"}</dt>
               <dd className="col-sm-11">
-                <p>Not operator. Converts booleans to their opposites.</p>
+                <p>Pas un opérateur. Convertit les booléens en leur opposé.</p>
               </dd>
               <dt className="col-sm-1">&&</dt>
               <dd className="col-sm-11">
                 <p>
-                  AND operator. If two booleans are true, returns true.
-                  Otherwise returns false.
+                  Opérateur ET. Si deux booléens sont vrais, vrai est retourné.
+                  Sinon faux est retourné.
                 </p>
               </dd>
               <dt className="col-sm-1">||</dt>
               <dd className="col-sm-11">
                 <p>
-                  OR operator. If of two compared booleans at least one is true
-                  returns true. Otherwise returns false.
+                  Opérateur OU. Si sur deux valeurs booléennes comparées, au
+                  moins une est vraie, vrai est retourné. Sinon faux est
+                  retourné.
                 </p>
               </dd>
               <dt className="col-sm-1">==</dt>
               <dd className="col-sm-11">
                 <p>
-                  Checks equality. If numbers compared, compares value.
-                  Otherwise compares values as strings.
+                  Vérifie l'égalité. Si les nombres sont comparés, compare la
+                  valeur. Sinon compare les valeurs en tant que chaîne de
+                  caractères.
                 </p>
               </dd>
               <dt className="col-sm-1">!=</dt>
               <dd className="col-sm-11">
                 <p>
-                  Checks inequality. If numbers compared, compares value.
-                  Otherwise compares values as strings.
+                  Vérifie l'inégalité. Si les nombres sont comparés, compare la
+                  valeur. Sinon compare les valeurs en tant que chaîne de
+                  caractères.
                 </p>
               </dd>
 
               <dt className="col-sm-1">{"<"}</dt>
               <dd className="col-sm-11">
                 <p>
-                  Less than. If numbers compared, compares value. Otherwise
-                  compares values as strings. Invalid for lists, maps, and
-                  booleans.
+                  Inférieur à. Si les nombres sont comparés, compare la valeur.
+                  Sinon compare les valeurs en tant que chaîne de caractères. Ne
+                  fonctionne pas pour les listes, les maps et les bouléens.
                 </p>
               </dd>
               <dt className="col-sm-1">{"<="}</dt>
               <dd className="col-sm-11">
                 <p>
-                  Less than or equals. If numbers compared, compares value.
-                  Otherwise compares values as strings. Invalid for lists, maps,
-                  and booleans.
+                  Inférieur ou égale à. Si les nombres sont comparés, compare la
+                  valeur. Sinon compare les valeurs en tant que chaîne de
+                  caractères. Ne fonctionne pas pour les listes, les maps et les
+                  bouléens.
                 </p>
               </dd>
               <dt className="col-sm-1">{">"}</dt>
               <dd className="col-sm-11">
                 <p>
-                  Greater than. If numbers compared, compares value. Otherwise
-                  compares values as strings. Invalid for lists, maps, and
-                  booleans.
+                  Supérieur à. Si les nombres sont comparés, compare la valeur.
+                  Sinon compare les valeurs en tant que chaîne de caractères. Ne
+                  fonctionne pas pour les listes, les maps et les bouléens.
                 </p>
               </dd>
               <dt className="col-sm-1">{">="}</dt>
               <dd className="col-sm-11">
                 <p>
-                  Greater than or equals. If numbers compared, compares value.
-                  Otherwise compares values as strings. Invalid for lists, maps,
-                  and booleans.
+                  Supérieur ou égal à. Si les nombres sont comparés, compare la
+                  valeur. Sinon compare les valeurs en tant que chaîne de
+                  caractères. Ne fonctionne pas pour les listes, les maps et les
+                  bouléens.
                 </p>
               </dd>
             </dl>
@@ -346,68 +354,71 @@ const GeneralOperators = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">General Operators</h3>
+            <h3 className="pb-3">Opérateurs généraux</h3>
             <dl className="row">
               <dt className="col-sm-1">{"="}</dt>
               <dd className="col-sm-11">
-                <p>Assignment operator. Assigns value to variable.</p>
+                <p>
+                  Opérateur d'assignation. Assigne une valeur à une variable.
+                </p>
               </dd>
               <dt className="col-sm-1">+=</dt>
               <dd className="col-sm-11">
                 <p>
-                  Adds variables previous initialized value to newly assigned
-                  value. Variable must be previously initialized.
+                  Ajoute la valeur des variables précédemment initialisées à la
+                  nouvelle valeur attribuée. Les variables doivent être
+                  initialisées au préalable.
                 </p>
               </dd>
 
               <dt className="col-sm-1">-=</dt>
               <dd className="col-sm-11">
                 <p>
-                  Subtracts variables newly assigned value from previously
-                  assigned value. Variable must be previously initialized.
+                  Soustrait la valeur nouvellement attribuée des variables de
+                  celle précédemment attribuée. Les variables doivent être
+                  initialisées au préalable.
                 </p>
               </dd>
 
               <dt className="col-sm-1">+</dt>
               <dd className="col-sm-11">
                 <p>
-                  Addition operation. Integer+Double {"=>"} Double.
-                  String+(Anything except Null) {"=>"} String. Valid between
-                  Lists as well.
+                  Addition. Integer+Double {"=>"} Double. String+(Tout sauf
+                  Null) {"=>"} String. Fonctionne aussi avec des lists.
                 </p>
               </dd>
               <dt className="col-sm-1">-</dt>
               <dd className="col-sm-11">
                 <p>
-                  Subtraction operation. Only valid between Integers and
+                  Soustraction. Ne fonctionne qu'avec des Integers et des
                   Doubles. Integer-Double {"=>"} Double.
                 </p>
               </dd>
               <dt className="col-sm-1">*</dt>
               <dd className="col-sm-11">
                 <p>
-                  Multiplication operation. (Positive Integers including 0)*(a
-                  list or string) is valid. [10,2] * 2 = [10,2,10,2], 'hi' * 0 =
-                  ''. Integer*Double {"=>"} Double.
+                  Multiplication. (Integers positifs incluant 0)*(une list ou
+                  une string) est valide. [10,2] * 2 = [10,2,10,2], 'salut' * 0
+                  = ''. Integer*Double {"=>"} Double.
                 </p>
               </dd>
               <dt className="col-sm-1">/</dt>
               <dd className="col-sm-11">
                 <p>
-                  Division operation. Integer/Integer {"=>"} Integer. In other
-                  words integer division by default. But Integer/Double {"=>"}{" "}
-                  Double.
+                  Division. Integer/Integer {"=>"} Integer. En d'autres termes,
+                  la division d'Integer est celle par défaut. Cependant
+                  Integer/Double {"=>"} Double.
                 </p>
               </dd>
               <dt className="col-sm-1">%</dt>
               <dd className="col-sm-11">
-                <p>Modulo Operator. Only valid for Integers.</p>
+                <p>Opération modulo. Ne fonctionne que pour les Integers.</p>
               </dd>
               <dt className="col-sm-1">^</dt>
               <dd className="col-sm-11">
                 <p>
-                  Power operator. Valid for Integers or Doubles. Integer^Double{" "}
-                  {"=>"} Double
+                  Puissance. Fonctionne avec des Integers ou des Doubles.
+                  Integer^Double {"=>"} Double
                 </p>
               </dd>
             </dl>
@@ -427,72 +438,80 @@ const PreBuiltFunctions = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Prebuilt Functions</h3>
+            <h3 className="pb-3">Fonctions prédéfinies</h3>
             <p className="pb-4">
-              List of prebuilt functions below. ITEM implies of any type. <br />
-              arg1 = argument 1, arg2 = argument 2...
+              Liste des fonctions prédéfinies ci-dessous. ITEM signifie
+              n'importe quel type. arg1 = argument 1, arg2 = argument 2...
             </p>
             <dl className="row">
-              <dt className="col-sm-4">len(LIST|MAP|STRING)</dt>
+              <dt className="col-sm-4">long(LIST|MAP|STRING)</dt>
               <dd className="col-sm-8">
-                <p>Returns the length of the object.</p>
+                <p>Retourne la longueur de l'objet.</p>
               </dd>
-              <dt className="col-sm-4">append(LIST, ITEM)</dt>
+              <dt className="col-sm-4">ajouter(LIST, ITEM)</dt>
               <dd className="col-sm-8">
-                <p>Arg2 added to end of List specified. New List returned.</p>
+                <p>
+                  Arg2 est ajouté à la fin de la liste spécifiée. Une nouvelle
+                  liste est retournée.
+                </p>
               </dd>
 
-              <dt className="col-sm-4">addAt(LIST, ITEM, INT)</dt>
+              <dt className="col-sm-4">ajouterÀ(LIST, ITEM, INT)</dt>
               <dd className="col-sm-8">
-                <p>Adds arg2 to List at index specified by arg3</p>
+                <p>Ajoute arg2 à la liste à l'index spécifié par arg3.</p>
               </dd>
 
-              <dt className="col-sm-4">get(LIST|STRING, INT)</dt>
+              <dt className="col-sm-4">obtenir(LIST|STRING, INT)</dt>
               <dd className="col-sm-8">
-                <p>Returns value of at arg2 from arg1.</p>
+                <p>Retourne la valeur indexée par arg2 dans arg1. </p>
               </dd>
-              <dt className="col-sm-4">get(MAP, ITEM)</dt>
+              <dt className="col-sm-4">obtenir(MAP, ITEM)</dt>
               <dd className="col-sm-8">
                 <p>
-                  Returns value attached to key from arg2 in the map at arg1.
+                  Retourne la valeur attachée à la clé indiquée par arg2 de la
+                  map de arg1.
                 </p>
               </dd>
-              <dt className="col-sm-4">remove(LIST, INT)</dt>
-              <dd className="col-sm-8">
-                <p>Value from arg1 removed at arg2 value. Returns new List.</p>
-              </dd>
-              <dt className="col-sm-4">remove(MAP, ITEM)</dt>
+              <dt className="col-sm-4">retirer(LIST, INT)</dt>
               <dd className="col-sm-8">
                 <p>
-                  Removes key value pair from Map in arg1, with arg2 being key.
-                  Returns new Map.
+                  La valeur indexée à arg2 est retirée de arg1. Retourne une
+                  nouvelle liste.
                 </p>
               </dd>
-              <dt className="col-sm-4">set(LIST, ITEM, INT)</dt>
+              <dt className="col-sm-4">retirer(MAP, ITEM)</dt>
               <dd className="col-sm-8">
                 <p>
-                  Sets value of List from arg1 at location in specified by arg3
-                  to value specified in arg2, then returns new List.
+                  Retire la paire valeur / clé de la map dans arg1, arg 2 étant
+                  la clé. Retourne une nouvelle map
                 </p>
               </dd>
-              <dt className="col-sm-4">put(MAP, ITEM, ITEM)</dt>
+              <dt className="col-sm-4">remplacer(LIST, ITEM, INT)</dt>
               <dd className="col-sm-8">
                 <p>
-                  Adds key and value pair to map in first argument, arg2 is key
-                  and arg3 is value. If key already present overwrites value.
-                  Then returns new Map.
+                  Remplace la valeur de la liste de arg1 à l'emplacement
+                  spécifié par arg3 par la valeur spécifié dans arg2, puis
+                  retourne une nouvelle liste.
+                </p>
+              </dd>
+              <dt className="col-sm-4">mettre(MAP, ITEM, ITEM)</dt>
+              <dd className="col-sm-8">
+                <p>
+                  Ajoute une pair valeur / clé à la map dans arg1, arg2 étant la
+                  clé et arg3 la valeur. Si la clé est déjà présente, la valeur
+                  est remplacée. Puis une nouvelle map est retournée
                 </p>
               </dd>
               <dt className="col-sm-4">sub(LIST|STRING, INT, INT)</dt>
               <dd className="col-sm-8">
                 <p>
-                  Returns sublist or substring from argument one, with range of
-                  inclusive at arg2 and exclusive of arg3. From arg2 to arg3.
+                  Retourne une sublist ou une substring à partir de arg1, aux
+                  index de arg2 inclus jusqu'à arg3 exclus. De arg2 à arg3.
                 </p>
               </dd>
-              <dt className="col-sm-4">getKeys(MAP)</dt>
+              <dt className="col-sm-4">obtenirClés(MAP)</dt>
               <dd className="col-sm-8">
-                <p>Returns array of keys from specified Map.</p>
+                <p>Retourne l'array de clés de la map spécifiée.</p>
               </dd>
             </dl>
           </div>
@@ -513,27 +532,30 @@ const Variables = () => {
           <div className="col align-self-center">
             <h3 className="pb-3">Variables</h3>
             <p>
-              Variables do not need to have a type when initialized. They have
-              function scope, and NO variable hoisting. Regex for valid custom
-              variable names is: <code>[A-Za-z]+[A-Za-z0-9]*</code>
+              Les variables, une fois initialisées, n'ont pas besoin d'avoir un
+              type. Elles ont une portée fonctionnelle (scope function) et le
+              language de programmation n'effectue pas de hoisting de variable.
+              Le regex pour les noms de variables personnalisées valides est :{" "}
+              <code>[A-Za-z]+[A-Za-z0-9]*</code>
               <br />
-              Semicolons optional.
+              Les points virgules sont facultatifs.
               <br />
-              Some example variable declarations are below.
+              Vous pouvez retrouver certains exemples de déclarations de
+              variable ci-dessous.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #séléctionner la langue voulue
 
   i = -10 + -(-+10 * 11) / 7 % 2 #int
   s = 'Hello, '
   s += 'World!' #string
   d = 0.10; #double
   n = null #null
-  b = true; #boolean
-  l = [10, [], 'yes'] #list
-  m = $|'x':10, 'y':10, true:20| #map
+  b = vrai; #boolean
+  l = [10, [], 'oui'] #list
+  m = $|'x':10, 'y':10, vrai:20| #map
                 `}
             </SyntaxHighlighter>
           </div>
@@ -552,31 +574,33 @@ const CustomFunctions = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Custom Functions</h3>
+            <h3 className="pb-3">Fonctions personnalisées</h3>
             <p>
-              Functions need to start with fonc or func. No return statement
-              required, and return statement can be empty. Supports recursion.
-              Does not support nested functions. Regex for valid custom function
-              names is: <code>[A-Za-z]+[A-Za-z0-9]*</code>
+              Les fonctions ont besoin de commencer avec fonc ou func (en
+              anglais). Pas de déclaration de retour requise et celle-ci
+              peut-être vide. Prend en charge la récursivité. Ne prend pas en
+              charge les fonctions imbriquées. Le regex pour des noms de
+              fonctions personnalisées valides est :
+              <code>[A-Za-z]+[A-Za-z0-9]*</code>
               <br />
-              Some example function declarations are below.
+              Voici quelques exemples de déclarations de fonctions ci-dessous.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #séléctionner la langue voulue
 
-  # two random functions
-  func printTruth(str) {
-    print(str)
+  # deux fonctions aléatoires
+  fonc imprimerVrai(str) {
+    imprimer(str)
   }
-  func addTwo(a, b) {
-    return a + b
+  fonc ajouterDeux(a, b) {
+    retourner a + b
   }
 
-  # print results, one with function one with print()
-  printTruth('Oui++ is so great!')
-  print(addTwo(10, 12))
+  # imprimer les résultats, l'un avec une fonction l'autre avec imprimer()
+  impriemrVrai('Oui++ est vraiment génial!')
+  imprimer(ajouterDeux(10, 12))
                 `}
             </SyntaxHighlighter>
           </div>
@@ -595,22 +619,20 @@ const Conditionals = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Conditionals</h3>
-            <p>Example statements below!</p>
+            <h3 className="pb-3">Conditionnels</h3>
+            <p>Exemple de déclarations ci-dessous !</p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #séléctionner la langue voulue
 
-  x = true
-  if(!x) {
-    print('In if')
-  } elif ((true == !false) && 10 == 10) {
-    print('In elif')
-  } else if (true) {
-    print('In else if')
-  } else {
-    print('in else')
+  x = vrai
+  si(!x) {
+    imprimer('Dans si')
+  } ou bien si ((vrai == !faux) && 10 == 10) {
+    imprimer('Dans ou bien si')
+  } sinon {
+    imprimer('Dans sinon')
   }
                 `}
             </SyntaxHighlighter>
@@ -630,21 +652,21 @@ const Comments = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Comments</h3>
-            <p>Single line: #, multi-line: ###</p>
+            <h3 className="pb-3">Commentaires</h3>
+            <p>Ligne seule: #, multiligne: ###</p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #séléctionner la langue voulue
 
-  # this is a single line
+  # Ceci est un commentaire sur une seule ligne 
 
   ### 
-    This
-    Is 
-    a 
-    Multiline
-    Comment 
+    Cela 
+    Est
+    Un 
+    Commentaire
+    Multiligne
   ###
                 `}
             </SyntaxHighlighter>
@@ -664,34 +686,36 @@ const Loops = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Loops</h3>
+            <h3 className="pb-3">Boucles</h3>
             <p>
-              Both for and while loops are available. For loops take in 3
-              inputs, a variable name, and a starting and ending Integer value.
-              If the starting is greater than the ending it counts in reverse.
-              While loops take in one conditional statement.
+              Les "boucles pour" et les "boucles tant que" sont toutes les deux
+              disponibles. Les boucles pour prennent 3 entrées de données, un
+              nom de variable, une valeur Integer de début et une de fin. Si la
+              valeur de début est supérieure à celle de fin, la boucle comptera
+              en sens inverse. Les boucles tant que n'acceptent qu'une seule
+              déclaration conditionnelle.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #séléctionner la langue voulue
 
   arr = [1, 2, 3, 4, 5]
 
-  # while loop through arr
-  print('WHILE LOOP:')
+  # boucle tant que dans arr
+  imprimer('BOUCLE TANT QUE:')
   i = 0
-  while(i <SyntaxHighlighter len(arr)) {
-    print(get(arr, i))
+  tant que(i < long(arr)) {
+    imprimer(obtenir(arr, i))
     i+=1
   }
   
-  # same but in for loop format, changing array slightly
-  print('\\nFOR LOOP:')
-  arr += ['oui++'] * 5 # some nifty list features
+  # La même chose mais avec une boucle pour, en changeant un peu l'array
+  imprimer('\\nBOUCLE POUR:')
+  arr += ['oui++'] * 5 #  quelques chouettes fonctionnalités de liste 
 
-  for i -> (0, len(arr)) {
-    print(get(arr, i))
+  pour i -> (0, long(arr)) {
+    imprimer(obtenir(arr, i))
   }
                 `}
             </SyntaxHighlighter>
@@ -711,18 +735,19 @@ const Print = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Print</h3>
+            <h3 className="pb-3">Imprimer</h3>
             <p>
-              To output a value use print(), and put the value in the ().
-              Newline added after every usage.
+              Pour "sortir" une valeur il suffit d'utiliser imprimer() et de
+              placer la valeur entre les (). Chaque nouvelle utilisation doit
+              être effectuée sur une nouvelle ligne.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #select appropriate language
+  lang:fr #sélectionner la langue appropriée
 
-  print(10 + 100)
-  print('Oui++ is the best, why did I print 110 before?')
+  imprimer(10 + 100)
+  imprimer('Oui++ est incroyable, pourquoi est-ce que j'ai imprimé 110 juste avant ?')
                 `}
             </SyntaxHighlighter>
           </div>
@@ -741,18 +766,20 @@ const SelectingLanguage = () => {
       <div className="container py-2">
         <div className="row">
           <div className="col align-self-center">
-            <h3 className="pb-3">Selecting Language</h3>
+            <h3 className="pb-3">Séléctionner une langue </h3>
             <p>
-              Default is French. Add <code>lang:eng</code> for english, and
-              optional to add <code>lang:fr</code> for french. MUST be added at
-              top of file on its own line. Comments excluded. <br /> Has no
-              effect on keywords, both English and French always work, just for
-              error messages.
+              La langue par défaut est le français. Il suffit d'ajouter{" "}
+              <code>lang:eng</code> pour l'anglais ou
+              <code>lang:fr</code> pour le français mais ce dernier reste
+              facultatif. La sélection de la langue DOIT être ajoutée tout en
+              haut du fichier, sur sa propre ligne (commentaires exclus). <br />{" "}
+              Cela n'a aucun effet sur les mots clés qui marchent à la fois en
+              français et en anglais, il en va seulement des messages d'erreur.
             </p>
 
             <SyntaxHighlighter language="python" style={github}>
               {`
-  lang:eng #this is selecting english as the language
+  lang:fr #le français est alors sélectionné comme langue 
                 `}
             </SyntaxHighlighter>
           </div>
@@ -765,4 +792,4 @@ const SelectingLanguage = () => {
   );
 };
 
-export { DocumentationBodyEng };
+export { DocumentationBodyFr };

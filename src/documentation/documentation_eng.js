@@ -119,7 +119,7 @@ const KeyWords = () => {
                 </tr>
                 <tr>
                   <td>null</td>
-                  <td>nul, nulle</td>
+                  <td>null</td>
                   <td>No</td>
                 </tr>
                 <tr>
@@ -197,7 +197,7 @@ const Types = () => {
           <div className="col align-self-center">
             <h3 className="pb-3">Types</h3>
             <dl className="row">
-              <dt className="col-sm-2">Int</dt>
+              <dt className="col-sm-2">Integer</dt>
               <dd className="col-sm-10">
                 <p>8 bytes.</p>
               </dd>
@@ -263,7 +263,7 @@ const BooleanOperators = () => {
             <dl className="row">
               <dt className="col-sm-1">{"!"}</dt>
               <dd className="col-sm-11">
-                <p>Not operator. Converts booleans to their opposites.</p>
+                <p>Not operator. Converts booleans to their opposite.</p>
               </dd>
               <dt className="col-sm-1">&&</dt>
               <dd className="col-sm-11">
@@ -352,7 +352,7 @@ const GeneralOperators = () => {
               <dt className="col-sm-1">+=</dt>
               <dd className="col-sm-11">
                 <p>
-                  Adds variables previous initialized value to newly assigned
+                  Adds variables previously initialized value to newly assigned
                   value. Variable must be previously initialized.
                 </p>
               </dd>
@@ -441,12 +441,12 @@ const PreBuiltFunctions = () => {
 
               <dt className="col-sm-4">addAt(LIST, ITEM, INT)</dt>
               <dd className="col-sm-8">
-                <p>Adds arg2 to List at index specified by arg3</p>
+                <p>Adds arg2 to List at index specified by arg3.</p>
               </dd>
 
               <dt className="col-sm-4">get(LIST|STRING, INT)</dt>
               <dd className="col-sm-8">
-                <p>Returns value of at arg2 from arg1.</p>
+                <p>Returns value at arg2 from arg1.</p>
               </dd>
               <dt className="col-sm-4">get(MAP, ITEM)</dt>
               <dd className="col-sm-8">
@@ -456,7 +456,9 @@ const PreBuiltFunctions = () => {
               </dd>
               <dt className="col-sm-4">remove(LIST, INT)</dt>
               <dd className="col-sm-8">
-                <p>Value from arg1 removed at arg2 value. Returns new List.</p>
+                <p>
+                  Value arg1 valued indexed by arg2 removed. Returns new List.
+                </p>
               </dd>
               <dt className="col-sm-4">remove(MAP, ITEM)</dt>
               <dd className="col-sm-8">
